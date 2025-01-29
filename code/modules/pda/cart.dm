@@ -240,13 +240,8 @@
 		new /datum/data/pda/app/secbot_control,
 		new /datum/data/pda/app/janitor,
 		new /datum/data/pda/app/supply,
-		new /datum/data/pda/app/status_display,
-		new /datum/data/pda/app/signaller
+		new /datum/data/pda/app/status_display
 	)
-
-/obj/item/cartridge/captain/Initialize(mapload)
-	. = ..()
-	integ_signaler = new /obj/item/assembly/signaler(src)
 
 /obj/item/cartridge/supervisor
 	name = "Easy-Record DELUXE"
@@ -272,8 +267,13 @@
 		new /datum/data/pda/app/secbot_control,
 		new /datum/data/pda/app/janitor,
 		new /datum/data/pda/app/supply,
-		new /datum/data/pda/app/status_display
+		new /datum/data/pda/app/status_display,
+		new /datum/data/pda/app/signaller
 	)
+
+/obj/item/cartridge/centcom/Initialize(mapload)
+	. = ..()
+	integ_signaler = new /obj/item/assembly/signaler(src)
 
 /obj/item/cartridge/syndicate
 	name = "Detomatix Cartridge"
